@@ -1,0 +1,21 @@
+resources:
+  jobs:
+    population_data_adhoc_run:
+      name: population_data_adhoc_run
+      tasks:
+        - task_key: adhoc_run
+          notebook_task:
+            notebook_path: /Workspace/Users/santanu103basu@gmail.com/dufrain_interview/databricks/notebooks/Databricks
+              Data Engineering Assessment - Questions
+            source: WORKSPACE
+          environment_key: Default
+      queue:
+        enabled: true
+      parameters:
+        - name: env
+          default: prod
+      environments:
+        - environment_key: Default
+          spec:
+            environment_version: "6"
+      performance_target: PERFORMANCE_OPTIMIZED
